@@ -10,7 +10,7 @@ render = web.template.render('templates/')
 
 class index:
 	def GET(self):
-		greeting = "Hello World"
+		greeting = "Welcome to Shiny SAN Studio"
 		return render.index(greeting = greeting)
 
 if __name__ == "__main__":
