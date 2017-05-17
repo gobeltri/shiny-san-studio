@@ -2,7 +2,7 @@ import smtplib
 from email.mime.text import MIMEText
 import os
 
-
+MAILTRAP_CFG_FILE = "../config/mailtrap.cfg"
 
 def send_email_mailtrap ( content ) :
     msg = MIMEText( content )
@@ -52,9 +52,9 @@ def init_mailtrap ( mailtrap_cfg_file ):
         
 
 # Load Mailtrap config from file and set env variables
-init_mailtrap("../../config/mailtrap.cfg")
+init_mailtrap( MAILTRAP_CFG_FILE )
 
-srcgs = check_stopped_rcgs ("../../config/3par-config-files/170509.063412.0001")
+srcgs = check_stopped_rcgs ("../config/3par-config-files/170509.063412.0001")
 #print ">>>>CHECK OUT FOLLOWING STOPPED RCGs<<<<\n" + srcgs
 
 send_email_mailtrap( srcgs )
